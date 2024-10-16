@@ -25,3 +25,40 @@ const blurHeader = () =>{
                        : header.classList.remove('blur-header')
 }
 window.addEventListener('scroll', blurHeader)
+
+
+
+// =============================EMAIL JS========================
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message')
+
+      const sendEmail =(e) =>{
+        e.preventDefault()
+  
+      // serviceID - templateID - #form - publickey
+      emailjs.sendForm('service_vm75swr','template_2pa57bm','#contact-form','TE1xvpAM0y-YDYfbY')
+      .then(() =>{
+        //    show sent message
+        contactMessage.textContent='Message Sent Succesfully ✅'
+
+        // Remove message after five second
+        setTimeout(()=>{
+            contactMessage.textContent=''
+        },5000)
+
+        // Clear input field
+        contactForm.reset() 
+      })
+
+      }
+
+      contactForm.addEventListener('submit', sendEmail)
+// ================================ SHOW SCROLL UP ==============================
+
+
+
+// ================================= SHOW SECTION ACTIVE LINK ==========================
+
+
+
+// ======================================SCROLL REVEAL ANIMATION ===============================
