@@ -208,7 +208,13 @@ left: 0;
 z-index: -1;
 
 }
-
+/* ACTIVE LINK */
+.active-link{
+    color: var(--first-color-light);
+}
+.active-link::after{
+width: 30%;
+}
 
 /* HOME */
 
@@ -226,7 +232,7 @@ z-index: -1;
 }
 
 .home__name{
-    font-size: var(--biggest-font-size);
+    font-size: 2.9rem;
     font-weight: var(--font-bold);
     word-break: break-word;
     margin-bottom: 1rem;
@@ -504,3 +510,66 @@ transition: transform .4s;
     font-weight: var(--font-semi-bold);
     color: var(--title-color);
 } 
+
+/* ==============FOOTER========================= */
+
+.footer{
+    background-color: var(--contaner-color);
+}
+.footer__contanier{
+    padding-block: 3rem 2rem;
+    row-gap: 3rem;
+}
+.footer__links{
+    display: flex;
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+
+.footer__link{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+.footer__link:hover{
+    color: var(--first-color-light);
+}
+.footer__copy{
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    text-align: center;
+}
+
+/* ======================SCROLL BAR============= */
+::-webkit-scrollbar{
+    width: .6rem;
+    background-color: hsl(var(--hue), 20% ,20% );
+}
+::-webkit-scrollbar-thumb{
+    background-color: hsl(var(--hue), 20% ,30% );
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(var(--hue), 20% ,40% );
+}
+
+/* ============================ SCROLL UP====================== */
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--contaner-color);
+    display: inline-flex;
+    padding: 6px;
+    color: var(--title-color);
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px hsla(var(--hue),30%,8%,  .3);
+    z-index: var(--z-tooottip);
+    transition: bottom .4s , transform .4s;
+}
+.scroll:hover{
+    transform: translateY(-.5rem);
+}
+/* ===================show scroll up================= */
+.show-scroll{
+    bottom: 3rem;
+}
